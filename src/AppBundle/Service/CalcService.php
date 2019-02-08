@@ -48,109 +48,109 @@ class CalcService
             ))
             ->add('1', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 1
                 )
             ))
             ->add('2', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 2
                 )
             ))
             ->add('3', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 3
                 )
             ))
             ->add('4', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 4
                 )
             ))
             ->add('5', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 5
                 )
             ))
             ->add('6', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 6
                 )
             ))
             ->add('7', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 7
                 )
             ))
             ->add('8', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 8
                 )
             ))
             ->add('9', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 9
                 )
             ))
             ->add('0', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-num',
+                    'class' => 'btn btn-primary btn-md btn-num',
                     'value' => 0
                 )
             ))
             ->add('.', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-decimal-point',
+                    'class' => 'btn btn-primary btn-md btn-decimal-point',
                     'value' => '.'
                 )
             ))
             ->add('+', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-math',
+                    'class' => 'btn btn-primary btn-md btn-math',
                     'value' => '+'
                 )
             ))
             ->add('-', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-math',
+                    'class' => 'btn btn-primary btn-md btn-math',
                     'value' => '-'
                 )
             ))
             ->add('*', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-math',
+                    'class' => 'btn btn-primary btn-md btn-math',
                     'value' => '*'
                 )
             ))
             ->add('/', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-math',
+                    'class' => 'btn btn-primary btn-md btn-math',
                     'value' => '/'
                 )
             ))
             ->add('OR', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-math',
+                    'class' => 'btn btn-primary btn-md btn-math',
                     'value' => 'OR'
                 )
             ))
             ->add('AND', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-primary btn-lg btn-math',
+                    'class' => 'btn btn-primary btn-md btn-math',
                     'value' => 'AND'
                 )
             ))
             ->add('Reset', ButtonType::class, array(
                 'attr' => array(
-                    'class' => 'btn btn-danger btn-lg btn-reset'
+                    'class' => 'btn btn-danger btn-md btn-reset'
                 )
             ))
             ->getForm();
