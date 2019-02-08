@@ -173,15 +173,29 @@ class CalcService
                 break;
             case 'OR':
                 $calcResult = $calcValue_1 | $calcValue_2;
+                $isBinary = true;
                 break;
             case 'AND':
                 $calcResult = $calcValue_1 & $calcValue_2;
+                $isBinary = true;
                 break;
             default:
                 # code...
                 break;
         }
 
-        return $calcResult;
+        return array(
+            'result' => $calcResult,
+            'isBinary' => isset($isBinary) ? $isBinary : false
+        );
+    }
+
+    public function valuesToBinary($calcValue_1, $calcValue_2, $calcResult)
+    {
+        return array(
+            decbin($calcValue_1),
+            decbin($calcValue_2),
+            decbin($calcResult)
+        );
     }
 }

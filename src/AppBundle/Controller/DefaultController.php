@@ -31,14 +31,19 @@ class DefaultController extends Controller
 
             $calcResult = $this->container->get('calc_service')->doMath($calcValue_1, $calcValue_2, $calcMath);
 
-            array_unshift($history, $calcValue_1 .' '. $calcMath .' '. $calcValue_2 . ' = ' . $calcResult);
+            if ($calcResult['isBinary']) {
+                $values = $this->container->get('calc_service')->valuesToBinary($calcValue_1, $calcValue_2, $calcResult['result']);
+                array_unshift($history, $calcValue_1 . '(' . $values[0] .') '. $calcMath .' '. $calcValue_2 . '(' . $values[1] . ') = ' . $calcResult['result'] . '(' . $values[2] . ')');
+            } else {
+                array_unshift($history, $calcValue_1 .' '. $calcMath .' '. $calcValue_2 . ' = ' . $calcResult['result']);
+            }
             $session->set('history', $history);
         }
 
         return $this->render('default/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'form' => $form->createView(),
-            'calcResult' => $calcResult,
+            'calcResult' => $calcResult['result'],
         ]);
     }
 
