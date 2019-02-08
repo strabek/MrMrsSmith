@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <style type="text/css">
+            .btn-num,
+            .btn-math,
+            .btn-decimal-point {
+                float: left;
+            }
+            .btn-calculate,
+            .calc-result {
+                float: right;
+            }
+            input.form-control {
+                margin-bottom: 20px;
+            }
+            .row-history {
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+            <script type="text/javascript">
+                $(function() {
+                    var status = false;
+                    $('.btn-num').on('click', function(event) {
+                        if (!status) {
+                            calcVal_1 = $('#form_calcValue_1').val();
+                            $('#form_calcValue_1').val(calcVal_1 + $(this).val());
+                        } else {
+                            calcVal_2 = $('#form_calcValue_2').val();
+                            $('#form_calcValue_2').val(calcVal_2 + $(this).val());
+                        }
+                    });
+
+                    $('.btn-math').on('click', function(event) {
+                        $('#form_calcMath').val($(this).val());
+                        status = true;
+                    });
+
+                    $('.btn-decimal-point').on('click', function(event) {
+                        if (!status) {
+                            calcVal_1 = $('#form_calcValue_1').val();
+                            $('#form_calcValue_1').val(calcVal_1 + $(this).val());
+                        } else {
+                            calcVal_2 = $('#form_calcValue_2').val();
+                            $('#form_calcValue_2').val(calcVal_2 + $(this).val());
+                        }
+                    });
+
+                    $('.btn-reset').on('click', function(event) {
+                        $('#form_calcValue_1').val('');
+                        $('#form_calcValue_2').val('');
+                        $('#form_calcMath').val('');
+                        status = false;
+                    });
+                });
+            </script>
+        {% endblock %}
+    </body>
+</html>

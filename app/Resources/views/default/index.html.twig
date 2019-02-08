@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-center">
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col align-self-center">
+                <h1 class="calc-result">Result: {{ calcResult }}</h1>
+            </div>
+        </div>
+        <div class="row row-history">
+            <div class="col align-self-center">
+                <a class="btn btn-warning btn-clear-history" href="{{ path('clear-history') }}">Clear history</a>
+                {% for item in app.session.get('history') %}
+                    <h5 class="history-row">{{item}}</h5>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
